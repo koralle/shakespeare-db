@@ -1,0 +1,6 @@
+You are free to use the license of this repository within the limits set by `opensourceshakespeare.org`.
+
+The license at opensourceshakespeare.org is as follows:
+
+You may download the OSS code and/or the database and use them in your personal, non-commercial projects without charge, as long as you give us credit and provide a link somewhere to www.opensourceshakespeare.org. Commercial use is not authorized without the permission from George Mason University. Inquiries, compliments, complaints, and idle threats should be e-mailed to mail@opensourceshakespeare.org.org.
+
