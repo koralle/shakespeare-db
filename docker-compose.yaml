@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  postgres:
+    build:
+      context: .
+      dockerfile: ./postgresql/Dockerfile
+    restart: always
+    environment:
+      POSTGRES_USER: shakespeare
+      POSTGRES_PASSWORD: shakespeare
+      PGPASSWORD: shakespeare
+      POSTGRES_DB: shakespeare
+      TZ: "Asia/Tokyo"
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./postgresql/init:/docker-entrypoint-initdb.d"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "81:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: info@shakespeare.info
+      PGADMIN_DEFAULT_PASSWORD: shakespeare
+    volumes:
+      - "pgadmin:/var/lib/pgadmin"
+    depends_on:
+      - postgres
+
+volumes:
+  pgadmin:
